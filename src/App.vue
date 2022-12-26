@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Game from './components/Game.vue';
+import GameElement from './components/GameElement.vue';
 
 </script>
 
 <template>
   <div className='container'>
     <div className='outbox'>
-      <Game />
+      <GameElement :width="10" :bomb="10" :cellSize="50" />
     </div>
   </div>
 </template>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue';
+import { ref } from 'vue';
 import { BUTTON_TYPE } from '../model/ButtonType';
 import { Field } from '../model/Field';
 
-const props = defineProps<{ width: number, bomb: number }>()
+const props = defineProps<{ width: number, bomb: number, cellSize: number }>()
 const field = ref(Field.GetRandomField(props.width, props.bomb))
 const showAssistant = ref(false)
 const showMenu = ref(false)
@@ -56,7 +56,7 @@ const clicked = (index: number, button_type: BUTTON_TYPE) => {
 </script>
 
 <template>
-
+    <FieldElement :field="field" :clicked="clicked" :cellSize="cellSize" :index="selectIndex" :selected="showMenu" />
 </template>
 
 <style scoped>
