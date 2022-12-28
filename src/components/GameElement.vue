@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { Ref, ref } from 'vue';
 import { BUTTON_TYPE } from '../model/ButtonType';
 import { Field } from '../model/Field';
+import FieldElement from './FieldElement.vue'
 
-const props = defineProps<{ width: number, bomb: number, cellSize: number }>()
-const field = ref(Field.GetRandomField(props.width, props.bomb))
+type Props = {
+    width: number
+    bomb: number
+    cellSize: number
+}
+
+const props = defineProps<Props>()
+const field = ref(Field.GetRandomField(props.width, props.bomb)) as Ref<Field>
 const showAssistant = ref(false)
 const showMenu = ref(false)
 const selectIndex = ref(0)
