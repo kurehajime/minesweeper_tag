@@ -3,6 +3,7 @@ import { Ref, ref } from 'vue';
 import { BUTTON_TYPE } from '../model/ButtonType';
 import { Field } from '../model/Field';
 import FieldElement from './FieldElement.vue'
+import BarElement from './BarElement.vue'
 
 type Props = {
     width: number
@@ -15,6 +16,7 @@ const field = ref(Field.GetRandomField(props.width, props.bomb)) as Ref<Field>
 const showAssistant = ref(false)
 const showMenu = ref(false)
 const selectIndex = ref(0)
+const scoreTime = ref(0)
 // TODO: タイマー処理
 // TODO: サウンド処理
 const startScore = () => {
@@ -59,10 +61,14 @@ const clicked = (index: number, button_type: BUTTON_TYPE) => {
         }
     }
 }
-
+const setShowAssistant = (value: boolean) => {
+    showAssistant.value = value
+}
 </script>
 
 <template>
+    <BarElement :field="field" :clickReset="() => { newGame() }"
+        :toggleAssistant="() => { setShowAssistant(!showAssistant) }" :cellSize="cellSize" :time="scoreTime" />
     <FieldElement :field="field" :clicked="clicked" :cellSize="cellSize" :index="selectIndex" :selected="showMenu" />
 </template>
 
