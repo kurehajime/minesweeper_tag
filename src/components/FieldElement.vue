@@ -34,18 +34,18 @@ const clicked = (x: number, y: number, button_type: BUTTON_TYPE) => {
     const index = Math.floor(x / cellSize) + Math.floor(y / cellSize) * props.field.Size()
     props.clicked(index, button_type)
 }
-
-const cells = props.field.Cells.map((cell, index) => {
-    const x = index % props.field.Size() * cellSize
-    const y = Math.floor(index / props.field.Size()) * cellSize
-    return { x, y, cell, index }
-})
-
+const getCells = () => {
+    return props.field.Cells.map((cell, index) => {
+        const x = index % props.field.Size() * cellSize
+        const y = Math.floor(index / props.field.Size()) * cellSize
+        return { x, y, cell, index }
+    })
+}
 
 </script>
 <template>
     <svg :width="FieldSize" :height="FieldSize" @click="mouseClick" @contextmenu="contextMenu">
-        <CellElement v-for="cell in cells" :key="cell.index" :cell="cell.cell" :x="cell.x" :y="cell.y"
+        <CellElement v-for="cell in getCells()" :key="cell.index" :cell="cell.cell" :x="cell.x" :y="cell.y"
             :cellSize="cellSize" :selected="props.selected && props.index === index" />
         <rect x="0" y="0" :width="FieldSize" :height="FieldSize" opacity="0"></rect>
     </svg>
