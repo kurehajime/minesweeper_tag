@@ -4,6 +4,7 @@ import { BUTTON_TYPE } from '../model/ButtonType';
 import { Field } from '../model/Field';
 import FieldElement from './FieldElement.vue'
 import BarElement from './BarElement.vue'
+import boopSfx from '../assets/Tada-sound.mp3';
 
 type Props = {
     width: number
@@ -12,24 +13,27 @@ type Props = {
 }
 
 const props = defineProps<Props>()
+const audio = new Audio(boopSfx)
 const field = ref(Field.GetRandomField(props.width, props.bomb)) as Ref<Field>
 const showAssistant = ref(false)
 const showMenu = ref(false)
 const selectIndex = ref(0)
 const scoreTime = ref(0)
-// TODO: タイマー処理
-// TODO: サウンド処理
+const intervalId = ref(0)
 const startScore = () => {
-    // タイマーをスタート
+    intervalId.value = setInterval(() => {
+        scoreTime.value += 1
+    }, 1000)
 }
 const resetScore = () => {
-    // タイマーをリセット
+    scoreTime.value = 0
 }
 const pauseScore = () => {
-    // タイマーを一時停止
+    clearInterval(intervalId.value)
 }
 const play = () => {
-    // サウンドを再生
+    audio.playbackRate = 1.5
+    audio.play()
 }
 const newGame = () => {
     resetScore()
@@ -67,11 +71,9 @@ const setShowAssistant = (value: boolean) => {
 </script>
 
 <template>
-    <BarElement :field="field" :clickReset="() => { newGame() }"
-        :toggleAssistant="() => { setShowAssistant(!showAssistant) }" :cellSize="cellSize" :time="scoreTime" />
+    <BarElement :field="field" :clickReset="() => { newGame() }" :cellSize="cellSize" :time="scoreTime" />
     <FieldElement :field="field" :clicked="clicked" :cellSize="cellSize" :index="selectIndex" :selected="showMenu" />
 </template>
-
 <style scoped>
 
 </style>

@@ -1,9 +1,7 @@
 <script setup lang="ts">import { Field } from '../model/Field';
-
 type Props = {
     field: Field
     clickReset: () => void
-    toggleAssistant: () => void
     cellSize: number
     time: number
 }
@@ -24,7 +22,6 @@ const face = () => {
     <div>
         <div className="title_bar">
             <div className="title"> Minesweeper </div>
-            <div className="button help center" @click="() => props.toggleAssistant()">?</div>
         </div>
         <div :style="{ width: props.field.Size() * cellSize }" class="bar">
             <div class='item num'><b>{{ props.field.BombCount() }}</b></div>
