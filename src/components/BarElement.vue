@@ -26,7 +26,7 @@ const face = () => {
             <div className="title"> Minesweeper </div>
             <div className="button help center" @click="() => props.toggleAssistant()">?</div>
         </div>
-        <div style=" { width: props.field.Size() * cellSize, } " class="bar">
+        <div :style="{ width: props.field.Size() * cellSize }" class="bar">
             <div class='item num'><b>{{ props.field.BombCount() }}</b></div>
             <div class='item center'>
                 <div class="button" @click="() => { props.clickReset() }">{{ face() }}</div>
@@ -47,7 +47,7 @@ const face = () => {
 
 .bar {
     background-color: lightgray;
-    width: 510px;
+    width: 500px;
     display: flex;
     border-style: ridge;
     border-width: 5px;
