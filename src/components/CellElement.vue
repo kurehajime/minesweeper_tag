@@ -1,4 +1,5 @@
-<script setup lang="ts">import { Cell } from '../model/State';
+<script setup lang="ts">
+import { Cell } from '../model/State';
 
 type Props = {
     cell: Cell

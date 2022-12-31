@@ -90,4 +90,14 @@ svg {
     border-style: ridge;
     border-width: 5px;
 }
+
+.menu {
+    position: sticky;
+    margin-top: -550px;
+    margin-left: -0px;
+    height: 550px;
+    width: 550px;
+    border-width: 0px;
+    border-style: none;
+}
 </style>

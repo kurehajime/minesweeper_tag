@@ -4,6 +4,7 @@ import { BUTTON_TYPE } from '../model/ButtonType';
 import { Field } from '../model/Field';
 import FieldElement from './FieldElement.vue'
 import BarElement from './BarElement.vue'
+import MenuElement from './MenuElement.vue'
 import boopSfx from '../assets/Tada-sound.mp3';
 
 type Props = {
@@ -70,6 +71,9 @@ const clicked = (index: number, button_type: BUTTON_TYPE) => {
 <template>
     <BarElement :field="field" :clickReset="() => { newGame() }" :cellSize="cellSize" :time="scoreTime" />
     <FieldElement :field="field" :clicked="clicked" :cellSize="cellSize" :index="selectIndex" :selected="showMenu" />
+    <MenuElement :show="showMenu" :x="Field.indexToXy(selectIndex, field.Size())[0] * cellSize"
+        :y="Field.indexToXy(selectIndex, field.Size())[1] * cellSize" :index="selectIndex" :clicked="clicked">
+    </MenuElement>
 </template>
 <style scoped>
 

@@ -46,7 +46,7 @@ const getCells = () => {
 <template>
     <svg :width="FieldSize" :height="FieldSize" @click="mouseClick" @contextmenu="contextMenu">
         <CellElement v-for="cell in getCells()" :key="cell.index" :cell="cell.cell" :x="cell.x" :y="cell.y"
-            :cellSize="cellSize" :selected="props.selected && props.index === index" />
+            :cellSize="cellSize" :selected="props.selected && props.index === cell.index" />
         <rect x="0" y="0" :width="FieldSize" :height="FieldSize" opacity="0"></rect>
     </svg>
 </template>
