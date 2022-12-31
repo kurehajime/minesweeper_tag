@@ -70,7 +70,7 @@ const clicked = (index: number, button_type: BUTTON_TYPE) => {
     <BarElement :field="field" :clickReset="() => { newGame() }" :cellSize="cellSize" :time="scoreTime" />
     <FieldElement :field="field" :clicked="clicked" :cellSize="cellSize" :index="selectIndex" :selected="showMenu" />
 </template>
-<style scoped>
+<style >
 @font-face {
     font-family: 'DSEG7Classic-Bold';
     font-style: normal;
