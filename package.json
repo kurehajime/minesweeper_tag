@@ -1,7 +1,16 @@
 {
   "name": "mine-sweeper",
-  "private": true,
   "version": "1.0.0",
+  "description": "Minesweeper for Web Components",
+  "keywords": [
+    "Minesweeper",
+    "Game",
+    "WebComponents",
+    "WebComponent"
+  ],
+  "license": "MIT",
+  "repository": "github:kurehajime/minesweeper_tag",
+  "homepage": "https://github.com/kurehajime/minesweeper_tag",
   "type": "module",
   "files": [
     "/dist"
