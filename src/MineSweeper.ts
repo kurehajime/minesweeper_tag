@@ -1,3 +1,3 @@
 import { defineCustomElement } from 'vue'
-import GameElement from './components/GameElement.ce.vue';
-export default defineCustomElement(GameElement)
+import MineSweeper from './components/MineSweeper.ce.vue';
+export default defineCustomElement(MineSweeper)
