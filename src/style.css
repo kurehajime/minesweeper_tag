@@ -1,3 +1,14 @@
 body {
   background-color: rgb(3, 130, 136);
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.outbox {
+  width: 550px;
+}

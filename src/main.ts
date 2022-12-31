@@ -1,5 +1,5 @@
-import { createApp } from 'vue'
 import './style.css'
-import App from './App.vue'
+import MineSweeper from './MineSweeper'
 
-createApp(App).mount('#app')
+
+customElements.define('mine-sweeper', MineSweeper)
