@@ -26,6 +26,7 @@ const startScore = () => {
 }
 const resetScore = () => {
     scoreTime.value = 0
+    clearInterval(intervalId.value)
 }
 const pauseScore = () => {
     clearInterval(intervalId.value)

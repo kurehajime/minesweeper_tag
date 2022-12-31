@@ -13,7 +13,10 @@
       <mine-sweeper width="10" bomb="10" cell-size="50" />
     </div>
   </div>
-  <script type="module" src="/src/main.ts"></script>
+  <script type="module" defer>
+    import MineSweeper from './dist/mine-sweeper.es.js'
+    customElements.define('mine-sweeper', MineSweeper)
+  </script>
 </BODY>
 
 </HTML>

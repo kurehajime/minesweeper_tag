@@ -1,5 +1,4 @@
-import './style.css'
-import MineSweeper from './MineSweeper'
+import {mine_sweeper} from './MineSweeper'
 
 
-customElements.define('mine-sweeper', MineSweeper)
+customElements.define('mine-sweeper', mine_sweeper)
