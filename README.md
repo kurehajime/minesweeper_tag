@@ -5,13 +5,13 @@
 install
 
 ```
-npm install mine-sweeper
+npm install mine-sweeper-tag
 ```
 
 Define custom element.
 
 ```
-import { mine_sweeper } from 'mine-sweeper'
+import { mine_sweeper } from 'mine-sweeper-tag'
 customElements.define('mine-sweeper', mine_sweeper)
 ```
 
