@@ -4,12 +4,14 @@ declare const _default: import("vue").DefineComponent<__VLS_TypePropsToRuntimePr
     x: number;
     y: number;
     index: number;
+    cols: number;
     clicked: (index: number, button_type: BUTTON_TYPE) => void;
 }>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     show: boolean;
     x: number;
     y: number;
     index: number;
+    cols: number;
     clicked: (index: number, button_type: BUTTON_TYPE) => void;
 }>>>, {}>;
 export default _default;

@@ -20,8 +20,8 @@ const face = () => {
 </script>
 <template>
     <div>
-        <div className="title_bar">
-            <div className="title"> Minesweeper </div>
+        <div class="title_bar" :style="{ width: props.field.Size() * cellSize }">
+            <div class="title"> Minesweeper </div>
         </div>
         <div :style="{ width: props.field.Size() * cellSize }" class="bar">
             <div class='item num'><b>{{ props.field.BombCount() }}</b></div>

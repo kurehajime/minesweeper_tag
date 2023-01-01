@@ -5,17 +5,32 @@ type Props = {
     x: number
     y: number
     index: number
+    cols: number
     clicked: (index: number, button_type: BUTTON_TYPE) => void
 }
 const props = defineProps<Props>()
-const x = () => { return parseInt(props.x.toString()) }
-const y = () => { return parseInt(props.y.toString()) }
 const index = () => { return parseInt(props.index.toString()) }
+const cols = () => { return parseInt(props.cols.toString()) }
+const col = () => { return index() % cols() }
+const row = () => { return Math.floor(index() / cols()) }
+const x = () => {
+    if (col() / cols() <= 0.7) {
+        return parseInt(props.x.toString())
+    }
+    return parseInt(props.x.toString()) - 100
+}
+
+const y = () => {
+    if (row() / cols() <= 0.7) {
+        return parseInt(props.y.toString())
+    }
+    return parseInt(props.y.toString()) - 100
+}
 </script>
 <template>
     <svg class="menu" v-if="props.show">
         <g>
-            <rect x="0" y="0" width="550" height="550" fill="white" fill-opacity="0"
+            <rect x="0" y="0" width="500" height="500" fill="white" fill-opacity="0"
                 @click="() => props.clicked(index(), 'menu')" />
             <circle :cx="x() + 75" :cy="y() + 25" r="25" stroke="black" fill="white"
                 @click="() => props.clicked(index(), 'flag')" />
@@ -31,10 +46,10 @@ const index = () => { return parseInt(props.index.toString()) }
 <style scoped>
 .menu {
     position: sticky;
-    margin-top: -550px;
+    margin-top: -500px;
     margin-left: -0px;
-    height: 550px;
-    width: 550px;
+    height: 500px;
+    width: 500px;
     border-width: 0px;
     border-style: none;
 }

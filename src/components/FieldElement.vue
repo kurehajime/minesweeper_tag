@@ -10,8 +10,8 @@ type Props = {
     selected: boolean
 }
 const props = defineProps<Props>()
-const cellSize = props.cellSize
-const FieldSize = props.field.Size() * cellSize
+const cellSize = () => props.cellSize
+const FieldSize = () => props.field.Size() * cellSize()
 const mouseClick = (e: MouseEvent) => {
     const x = e.offsetX
     const y = e.offsetY
@@ -31,23 +31,23 @@ const contextMenu = (e: MouseEvent) => {
     return false
 }
 const clicked = (x: number, y: number, button_type: BUTTON_TYPE) => {
-    const index = Math.floor(x / cellSize) + Math.floor(y / cellSize) * props.field.Size()
+    const index = Math.floor(x / cellSize()) + Math.floor(y / cellSize()) * props.field.Size()
     props.clicked(index, button_type)
 }
 const getCells = () => {
     return props.field.Cells.map((cell, index) => {
-        const x = index % props.field.Size() * cellSize
-        const y = Math.floor(index / props.field.Size()) * cellSize
+        const x = index % props.field.Size() * cellSize()
+        const y = Math.floor(index / props.field.Size()) * cellSize()
         return { x, y, cell, index }
     })
 }
 
 </script>
 <template>
-    <svg :width="FieldSize" :height="FieldSize" @click="mouseClick" @contextmenu="contextMenu">
+    <svg :width="FieldSize()" :height="FieldSize()" @click="mouseClick" @contextmenu="contextMenu">
         <CellElement v-for="cell in getCells()" :key="cell.index" :cell="cell.cell" :x="cell.x" :y="cell.y"
-            :cellSize="cellSize" :selected="props.selected && props.index === cell.index" />
-        <rect x="0" y="0" :width="FieldSize" :height="FieldSize" opacity="0"></rect>
+            :cellSize="cellSize()" :selected="props.selected && props.index === cell.index" />
+        <rect x="0" y="0" :width="FieldSize()" :height="FieldSize()" opacity="0"></rect>
     </svg>
 </template>
 <style scoped>

@@ -23,5 +23,5 @@ customElements.define('mine-sweeper', mine_sweeper)
 Insert tag.
 
 ```
-<mine-sweeper width="10" bomb="10" cell-size="50" />
+<mine-sweeper cols="10" bomb="10" />
 ```

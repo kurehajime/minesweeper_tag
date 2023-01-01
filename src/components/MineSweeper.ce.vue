@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import GameElement from './GameElement.vue';
 type Props = {
-    width: number
+    cols: number
     bomb: number
-    cellSize: number
 }
 
 const props = defineProps<Props>()
+const cellSize = () => { return 500 / props.cols }
 </script>
 
 <template>
-    <GameElement :width="props.width" :bomb="props.bomb" :cellSize="props.cellSize"></GameElement>
+    <GameElement :cols="props.cols" :bomb="props.bomb" :cellSize="cellSize()"></GameElement>
 </template>
+
 <style>
 @font-face {
     font-family: 'DSEG7Classic-Bold';
@@ -95,8 +96,8 @@ svg {
     position: sticky;
     margin-top: -550px;
     margin-left: -0px;
-    height: 550px;
-    width: 550px;
+    height: 500px;
+    width: 500px;
     border-width: 0px;
     border-style: none;
 }
