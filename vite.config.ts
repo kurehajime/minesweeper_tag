@@ -11,6 +11,7 @@ export default defineConfig({
       name: "MineSweeper",
       fileName: (format) => `mine-sweeper.${format}.js`,
     },
+    sourcemap: true,
   },
   plugins: [vue({
     template: {
