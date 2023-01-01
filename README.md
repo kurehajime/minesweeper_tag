@@ -4,7 +4,12 @@
 
 Minesweeper for Web Components
 
-![MineSweeper](https://user-images.githubusercontent.com/4569916/210158769-7d3e975e-a5bb-46be-a581-10271682ead2.gif)
+[![MineSweeper](https://user-images.githubusercontent.com/4569916/210158769-7d3e975e-a5bb-46be-a581-10271682ead2.gif)](https://kurehajime.github.io/minesweeper_tag/)
+
+
+Demo
+
+https://kurehajime.github.io/minesweeper_tag/
 
 
 ## Installation
