@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=600px,target-densitydpi=device-dpi">
     <script>process = { env: { NODE_ENV: null } }</script>
     <script type="module">
-        import { mine_sweeper } from 'https://unpkg.com/mine-sweeper-tag@1.0.2/dist/mine-sweeper.es.js';
+        import { mine_sweeper } from 'https://unpkg.com/mine-sweeper-tag@1.0.3/dist/mine-sweeper.es.js';
         customElements.define('mine-sweeper', mine_sweeper)
     </script>
     <style>
@@ -28,7 +28,7 @@
 <body>
     <div class='container'>
         <div class='outbox'>
-            <mine-sweeper width="30" bomb="10" />
+            <mine-sweeper cols="10" bomb="10" />
         </div>
     </div>
 </body>
