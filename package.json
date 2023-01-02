@@ -28,7 +28,9 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "verup": "npm version patch",
+    "publish": "npm publish ./ "
   },
   "dependencies": {
     "vue": "^3.2.45"
