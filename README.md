@@ -30,8 +30,10 @@ customElements.define('mine-sweeper', mine_sweeper)
 Insert tag.
 
 ```
-<mine-sweeper cols="10" bomb="10" />
+<mine-sweeper cols="10" bomb="10" beep />
 ```
+
+
 
 ## Contributing
 

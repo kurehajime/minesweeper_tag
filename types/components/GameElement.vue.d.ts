@@ -2,10 +2,12 @@ declare const _default: import("vue").DefineComponent<__VLS_TypePropsToRuntimePr
     cols: number;
     bomb: number;
     cellSize: number;
+    beep: boolean;
 }>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     cols: number;
     bomb: number;
     cellSize: number;
+    beep: boolean;
 }>>>, {}>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;

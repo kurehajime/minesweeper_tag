@@ -11,6 +11,7 @@ type Props = {
     cols: number
     bomb: number
     cellSize: number
+    beep: boolean
 }
 
 const props = defineProps<Props>()
@@ -33,8 +34,10 @@ const pauseScore = () => {
     clearInterval(intervalId.value)
 }
 const play = () => {
-    audio.playbackRate = 1.5
-    audio.play()
+    if (props.beep) {
+        audio.playbackRate = 1.5
+        audio.play()
+    }
 }
 const newGame = () => {
     resetScore()

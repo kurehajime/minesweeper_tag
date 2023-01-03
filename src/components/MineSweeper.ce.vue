@@ -3,14 +3,16 @@ import GameElement from './GameElement.vue';
 type Props = {
     cols: number
     bomb: number
+    beep?: boolean
 }
 
 const props = defineProps<Props>()
 const cellSize = () => { return 500 / props.cols }
+const beep = () => { return props.beep ?? false }
 </script>
 
 <template>
-    <GameElement :cols="props.cols" :bomb="props.bomb" :cellSize="cellSize()"></GameElement>
+    <GameElement :cols="props.cols" :bomb="props.bomb" :cellSize="cellSize()" :beep="beep()"></GameElement>
 </template>
 
 <style>
