@@ -20,6 +20,8 @@ npm install mine-sweeper-tag
 
 ## Usage
 
+### npm
+
 Define custom element.
 
 ```
@@ -33,7 +35,17 @@ Insert tag.
 <mine-sweeper cols="10" bomb="10" beep />
 ```
 
+### CDN
 
+insert your HTML.
+
+```
+<script type="module">
+    import { mine_sweeper } from 'https://unpkg.com/mine-sweeper-tag@latest/dist/mine-sweeper.es.js';
+    customElements.define('mine-sweeper', mine_sweeper)
+</script>
+<mine-sweeper cols="10" bomb="10" beep />
+```
 
 ## Contributing
 
